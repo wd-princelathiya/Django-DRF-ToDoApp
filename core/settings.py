@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "rest_framework_simplejwt",
     "drf_yasg",
     "accounts",
+    "taskstodo"
 ]
 
 MIDDLEWARE = [
@@ -144,8 +145,16 @@ REST_FRAMEWORK = {
         "rest_framework.authentication.SessionAuthentication",
     ],
 }
+
+
 AUTH_USER_MODEL = "accounts.User"
-AUTH_PROFILE_MODULE = "accounts.User"
+ACCOUNT_USER_MODEL_USERNAME_FIELD = None
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_INACTIVE_REQUIRED = False
+ACCOUNT_AUTHENTICATION_METHOD = "email"
+
+
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(days=7),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=7),

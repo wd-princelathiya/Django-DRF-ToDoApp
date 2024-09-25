@@ -1,9 +1,8 @@
 from django.contrib import admin
 from .models import User
-from django.contrib.auth.admin import UserAdmin
 
 
-class UserAdminConfig(UserAdmin):
+class UserAdminConfig(admin.ModelAdmin):
     model = User
     search_fields = ("email",)
     list_filter = ("email",)
