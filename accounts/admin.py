@@ -8,7 +8,6 @@ class UserAdminConfig(admin.ModelAdmin):
     list_filter = ("email",)
     ordering = ("-created_date",)
     list_display = ("email",)
-    
 
 
 admin.site.register(User, UserAdminConfig)

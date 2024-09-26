@@ -3,6 +3,7 @@ from .models import Task
 
 
 class TodoAdmin(admin.ModelAdmin):
-    list_display = ["title","user"]
+    list_display = ["title", "user"]
 
-admin.site.register(Task,TodoAdmin)
+
+admin.site.register(Task, TodoAdmin)

@@ -36,10 +36,11 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractBaseUser, PermissionsMixin):
+    """custom user model"""
 
     email = models.EmailField(max_length=256, unique=True)
-    first_name = models.CharField(max_length=256,null=True,blank=True)
-    last_name = models.CharField(max_length=256,null=True,blank=True)
+    first_name = models.CharField(max_length=256, null=True, blank=True)
+    last_name = models.CharField(max_length=256, null=True, blank=True)
     is_superuser = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)
     created_date = models.DateTimeField(auto_now_add=True)
